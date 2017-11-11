@@ -61,7 +61,7 @@
     <li>${book.price }</li>
   </ul>
 	<!-- 加入购物车 -->
-  <form id="form" action="<c:url value='OrderServlet?method=showCart&bid=${book.bid }&price=${book.price }'/>" method="post">
+  <form id="form" action="<c:url value='OrderServlet?method=addToCart&bid=${book.bid }'/>" method="post">
   	<input type="text" size="3" name="count" value="1"/>
   </form>
   <a href="javascript:document.getElementById('form').submit();"></a>

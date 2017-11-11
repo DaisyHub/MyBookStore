@@ -18,7 +18,9 @@
   </filter>
   <filter-mapping>
     <filter-name>UserFilter</filter-name>
-    <url-pattern>/jsps/*</url-pattern>
+    <url-pattern>/jsps/cart/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>   
   </filter-mapping>
   <servlet>
     <description></description>
