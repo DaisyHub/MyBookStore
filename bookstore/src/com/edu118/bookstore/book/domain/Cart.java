@@ -2,21 +2,19 @@ package com.edu118.bookstore.book.domain;
 
 public class Cart {
 	/*
-	 * book.image,book.bname,book.author,book.price,orderitem.count,"
-			+ "orderitem.subtotal
+	 * ¹ºÎï³µ
 	 */
-	private String image;
-	private String bname;
-	private String author;
-	private Double price;
-	private Integer count;
-	private Double subtotal;
+	private String caid;
 	private String bid;
-	public String getImage() {
-		return image;
+	private Integer count;
+	private Book book;
+	private Double subtotal;
+	private String uid;
+	public String getCaid() {
+		return caid;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setCaid(String caid) {
+		this.caid = caid;
 	}
 	public String getBid() {
 		return bid;
@@ -24,23 +22,11 @@ public class Cart {
 	public void setBid(String bid) {
 		this.bid = bid;
 	}
-	public String getBname() {
-		return bname;
+	public Book getBook() {
+		return book;
 	}
-	public void setBname(String bname) {
-		this.bname = bname;
-	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	public Double getPrice() {
-		return price;
-	}
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setBook(Book book) {
+		this.book = book;
 	}
 	public Integer getCount() {
 		return count;
@@ -54,10 +40,16 @@ public class Cart {
 	public void setSubtotal(Double subtotal) {
 		this.subtotal = subtotal;
 	}
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 	@Override
 	public String toString() {
-		return "Cart [image=" + image + ", bname=" + bname + ", author=" + author + ", price=" + price + ", count="
-				+ count + ", subtotal=" + subtotal + ", bid=" + bid + "]";
+		return "Cart [caid=" + caid + ", bid=" + bid + ", book=" + book + ", count=" + count + ", subtotal=" + subtotal
+				+ ", uid=" + uid + "]";
 	}
 	
 	

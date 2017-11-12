@@ -62,7 +62,7 @@ li {
 			<tr>
 				<td colspan="7" align="right"
 					style="font-size: 15pt; font-weight: 900"><a
-					href="<c:url value='OrderServlet?method=clearCart'/>">清空购物车</a></td>
+					href="<c:url value='CartServlet?method=clearCart'/>">清空购物车</a></td>
 			</tr>
 			<tr>
 				<th>图片</th>
@@ -74,18 +74,18 @@ li {
 				<th>操作</th>
 			</tr>
 
-			<c:forEach items="${carts }" var="book">
+			<c:forEach items="${carts }" var="cart">
 				<tr>
 					<td><div>
-							<img src="<c:url value='${book.image }'/>" />
+							<img src="<c:url value='${cart.book.image }'/>" />
 						</div></td>
-					<td>${book.bname }</td>
-					<td>${book.author }</td>
-					<td>${book.price }元</td>
-					<td>${book.count }</td>
-					<td>${book.subtotal }元</td>
+					<td>${cart.book.bname }</td>
+					<td>${cart.book.author }</td>
+					<td>${cart.book.price }元</td>
+					<td>${cart.count }</td>
+					<td>${cart.subtotal }元</td>
 					<td><a
-						href="<c:url value='OrderServlet?method=delBook&bid=${book.bid }'/>">删除</a></td>
+						href="<c:url value='CartServlet?method=delBook&caid=${cart.caid }'/>">删除</a></td>
 				</tr>
 			</c:forEach>
 			<tr>
@@ -95,7 +95,7 @@ li {
 			<tr>
 				<td colspan="7" align="right"
 					style="font-size: 15pt; font-weight: 900"><a id="buy"
-					href="<c:url value='/jsps/order/desc.jsp'/>">去买单</a></td>
+					href="<c:url value='/OrderServlet?method=addOrder&'/>">去买单</a></td>
 			</tr>
 		</table>
 	</c:if>

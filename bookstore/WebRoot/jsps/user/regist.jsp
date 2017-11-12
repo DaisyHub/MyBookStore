@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1>注册</h1>
+  <h1>我是干巴巴的注册</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action='<c:url value='/UserServlet'/>' method="post">	
 	<input type="hidden" name="method" value="register"/>
@@ -32,6 +32,7 @@
 	邮　箱：<input type="text" name="email" value="${userForm.email }"/>
 	<font color="red">${error.email }</font><br/>
 	<input type="submit" value="注册"/>
+	<a href='<c:url value='/jsps/user/login.jsp'/>'>咱要登录</a>
 </form>
   </body>
 </html>

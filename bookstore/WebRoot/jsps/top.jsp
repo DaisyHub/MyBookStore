@@ -42,9 +42,11 @@ a:hover {
 				<c:otherwise>游客</c:otherwise>
 			</c:choose>
 			&nbsp;&nbsp;|&nbsp;&nbsp; 
-			<a href="<c:url value='/OrderServlet?method=showCart'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href="<c:url value='/jsps/order/list.jsp'/>" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="<c:url value='/CartServlet?method=showCart'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="<c:url value='/OrderServlet?method=showOrder'/>" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<c:if test="${not empty user }">
 			<a href="<c:url value='/UserServlet?method=exit'/>" target="_parent">退出</a> <br />
+			</c:if>
 			<c:if test="${empty user }">
 				<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">登录</a>|&nbsp;
 				<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">注册</a>				

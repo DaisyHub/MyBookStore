@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<web-app xmlnsxsi="http//www.w3.org/2001/XMLSchema-instance">
   <servlet>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>com.edu118.bookstore.user.web.servlet.UserServlet</servlet-class>
@@ -20,7 +20,7 @@
     <filter-name>UserFilter</filter-name>
     <url-pattern>/jsps/cart/*</url-pattern>
     <dispatcher>FORWARD</dispatcher>
-    <dispatcher>REQUEST</dispatcher>   
+    <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
   <servlet>
     <description></description>
@@ -31,6 +31,16 @@
   <servlet-mapping>
     <servlet-name>BookServlet</servlet-name>
     <url-pattern>/BookServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartServlet</display-name>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.edu118.bookstore.book.web.servlet.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/CartServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

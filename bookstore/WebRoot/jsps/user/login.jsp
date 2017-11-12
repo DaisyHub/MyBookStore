@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1>登录</h1>
+  <h1>登录开启新世界大门</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/UserServlet'/>" method="post">
 	<input type="hidden" name="method" value="login">
@@ -30,6 +30,7 @@
 	密　码：<input type="password" name="password"/>
 	<font color="red">${error.password }</font><br/>
 	<input type="submit" value="登录"/>
+	<a href='<c:url value='/jsps/user/regist.jsp'/>'>咱要注册</a>
 </form>
   </body>
 </html>

@@ -1,5 +1,7 @@
 package com.edu118.bookstore.book.domain;
 
+import java.util.List;
+
 public class OrderItem {
 	/*
 	 *	iid CHAR(32) PRIMARY KEY,
@@ -13,6 +15,7 @@ public class OrderItem {
 	private Double subtotal;//数量*单价
 	private String oid;//是订单中oid的从键
 	private String bid;//是book中bid的的从键
+	private List<Book> booklist;
 	public String getIid() {
 		return iid;
 	}
@@ -43,9 +46,18 @@ public class OrderItem {
 	public void setBid(String bid) {
 		this.bid = bid;
 	}
+	public List<Book> getBooklist() {
+		return booklist;
+	}
+	public void setBooklist(List<Book> booklist) {
+		this.booklist = booklist;
+	}
 	@Override
 	public String toString() {
 		return "OrderItem [iid=" + iid + ", count=" + count + ", subtotal=" + subtotal + ", oid=" + oid + ", bid=" + bid
-				+ "]";
-	}	
+				+ ", booklist=" + booklist + "]";
+	}
+	
+	
+	
 }
