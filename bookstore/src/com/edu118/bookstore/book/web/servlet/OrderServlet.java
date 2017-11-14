@@ -58,5 +58,37 @@ public class OrderServlet extends BaseServlet {
 		return "f:/jsps/order/desc.jsp";
 	}
 
+	//为该订单付钱,在order中添加上地址,改变订单状态
+	public String payOrder(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String oid = request.getParameter("oid");
+		String address = request.getParameter("address");
+		if(address.isEmpty() || address.trim().isEmpty()){
+			request.setAttribute("msg", "你是想让我把书发给空气吗？收货地址记得填啦！！！");
+			return "f:/jsps/body.jsp";
+		}
+		orderService.payOrder(oid, address);
+		request.setAttribute("msg", "已经付好钱了，静静等待收货吧...");
+		return "f:/jsps/body.jsp";
+	}
 	
+	/*
+	 * 确认收货：
+	 */
+	public String confirmReceipt(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String oid = request.getParameter("oid");
+		orderService.confirmReceipt(oid);
+		request.setAttribute("msg", "确认收货成功，卖家将收到你的钱");
+		return "f:/jsps/body.jsp";
+	}
+	
+	//在我的订单上点击付款，将所有关于该订单的信息显示到desc.jsp
+	public String payOnList(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String oid = request.getParameter("oid");
+		Order order = orderService.findOrderByOid(oid);
+		request.setAttribute("order", order);
+		return "f:/jsps/order/desc.jsp";
+	}
 }

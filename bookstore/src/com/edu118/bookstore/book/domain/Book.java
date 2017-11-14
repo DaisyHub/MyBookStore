@@ -15,6 +15,7 @@ public class Book {
 	private String author;
 	private String image;
 	private String cid;//Í¼ÊéÀà±ğid
+	private Integer state;
 	public String getBid() {
 		return bid;
 	}
@@ -51,10 +52,17 @@ public class Book {
 	public void setCid(String cid) {
 		this.cid = cid;
 	}
+	
+	public Integer getState() {
+		return state;
+	}
+	public void setState(Integer state) {
+		this.state = state;
+	}
 	@Override
 	public String toString() {
 		return "Book [bid=" + bid + ", bname=" + bname + ", price=" + price + ", author=" + author + ", image=" + image
-				+ ", cid=" + cid + "]";
+				+ ", cid=" + cid + ", state=" + state + "]";
 	}
 	
 }

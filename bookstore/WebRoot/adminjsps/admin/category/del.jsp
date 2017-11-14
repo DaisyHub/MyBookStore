@@ -21,9 +21,10 @@
   
   <body>
     <h1>删除分类</h1>
-    <form action="javascript:alert('删除分类成功！');" method="post">
-    	<input type="hidden" name="cid" value="" />
-    	分类名称：<input type="text" name="cname" value="JavaSE分类" disabled="disabled"/>
+    <form action="<c:url value='/CategoryServlet'/>" method="post">
+    	<input type="hidden" name="method" value="delCategory"/>
+    	<input type="hidden" name="cid" value="${category.cid }" />
+    	分类名称：<input type="text" name="cname" value="${category.cname }" disabled="disabled"/>
     	<input type="submit" value="删除分类"/>
     </form>
   </body>

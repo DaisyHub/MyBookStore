@@ -59,9 +59,14 @@ li {
 		<c:forEach items="${orders }" var="order">
 			<tr bgcolor="gray" bordercolor="gray">
 				<td colspan="6">订单编号：${order.oid } 成交时间：${order.ordertime } 金额：<font
-					color="red"><b>${order.total }</b></font> <a
-					href="<c:url value='/jsps/order/desc.jsp'/>">付款</a> 等待发货 <a
-					href="javascript:alert('已确认收货！');">确认收货</a> 订单结束
+					color="red"><b>${order.total }</b></font> 
+					
+					<c:choose>
+					<c:when test="${order.state eq 1 }"><a href="<c:url value='/OrderServlet?method=payOnList&oid=${order.oid }'/>">付款</a></c:when>
+					<c:when test="${order.state eq 2 }">等待发货</c:when>
+					<c:when test="${order.state eq 3 }"><a href="<c:url value='/OrderServlet?method=confirmReceipt&oid=${order.oid }'/>">确认收货</a></c:when> 
+					<c:when test="${order.state eq 4 }">订单结束</c:when>
+					</c:choose>
 				</td>
 			</tr>
 			 

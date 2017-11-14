@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlnsxsi="http//www.w3.org/2001/XMLSchema-instance">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http//www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <servlet>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>com.edu118.bookstore.user.web.servlet.UserServlet</servlet-class>
@@ -51,5 +51,45 @@
   <servlet-mapping>
     <servlet-name>OrderServlet</servlet-name>
     <url-pattern>/OrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CategoryServlet</display-name>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>com.edu118.bookstore.admin.web.servlet.CategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/CategoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminBookServlet</display-name>
+    <servlet-name>AdminBookServlet</servlet-name>
+    <servlet-class>com.edu118.bookstore.admin.web.servlet.AdminBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminBookServlet</servlet-name>
+    <url-pattern>/AdminBookServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddBookServlet</display-name>
+    <servlet-name>AddBookServlet</servlet-name>
+    <servlet-class>com.edu118.bookstore.admin.web.servlet.AddBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddBookServlet</servlet-name>
+    <url-pattern>/AddBookServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminOrderServlet</display-name>
+    <servlet-name>AdminOrderServlet</servlet-name>
+    <servlet-class>com.edu118.bookstore.admin.web.servlet.AdminOrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminOrderServlet</servlet-name>
+    <url-pattern>/AdminOrderServlet</url-pattern>
   </servlet-mapping>
 </web-app>
